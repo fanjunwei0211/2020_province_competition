@@ -3,6 +3,11 @@
 #ifndef __DATA_PRTOCOL_H
 #define __DATA_PRTOCOL_H
  
+//#include <string.h> 
+//#include <stdio.h>
+//#include <stdint.h>
+//#include <stdlib.h>
+//#include <math.h>
  
 extern unsigned char DataScope_OutPut_Buffer[42];	   //待发送帧数据缓存区
 
