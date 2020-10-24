@@ -1,0 +1,6 @@
+E:\stm32\陀螺仪WT901C\WT901C\上位机\标准上位机_WT901C\temp\MiniIMU.exe,E:\stm32\陀螺仪WT901C\WT901C\上位机\标准上位机_WT901C\MiniIMU.exe
+E:\stm32\陀螺仪WT901C\WT901C\上位机\标准上位机_WT901C\temp\zh-CN\MiniIMU.resources.dll,E:\stm32\陀螺仪WT901C\WT901C\上位机\标准上位机_WT901C\zh-CN\MiniIMU.resources.dll
+E:\stm32\陀螺仪WT901C\WT901C\上位机\标准上位机_WT901C\temp\zh-Hans\MiniIMU.resources.dll,E:\stm32\陀螺仪WT901C\WT901C\上位机\标准上位机_WT901C\zh-Hans\MiniIMU.resources.dll
+E:\stm32\陀螺仪WT901C\WT901C\上位机\标准上位机_WT901C\temp\zh\MiniIMU.resources.dll,E:\stm32\陀螺仪WT901C\WT901C\上位机\标准上位机_WT901C\zh\MiniIMU.resources.dll
+E:\stm32\陀螺仪WT901C\WT901C\上位机\标准上位机_WT901C\temp\SerialPortProtocol.dll,E:\stm32\陀螺仪WT901C\WT901C\上位机\标准上位机_WT901C\SerialPortProtocol.dll
+E:\stm32\陀螺仪WT901C\WT901C\上位机\标准上位机_WT901C\temp\FirmwareUpdate.dll,E:\stm32\陀螺仪WT901C\WT901C\上位机\标准上位机_WT901C\FirmwareUpdate.dll
