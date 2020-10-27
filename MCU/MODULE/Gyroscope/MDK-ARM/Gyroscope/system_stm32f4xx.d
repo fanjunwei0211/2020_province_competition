@@ -2,7 +2,7 @@ gyroscope\system_stm32f4xx.o: ../Core/Src/system_stm32f4xx.c
 gyroscope\system_stm32f4xx.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 gyroscope\system_stm32f4xx.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 gyroscope\system_stm32f4xx.o: ../Drivers/CMSIS/Include/core_cm4.h
-gyroscope\system_stm32f4xx.o: D:\ARM\ARMCC\Bin\..\include\stdint.h
+gyroscope\system_stm32f4xx.o: G:\mdk5\ARM\ARMCC\Bin\..\include\stdint.h
 gyroscope\system_stm32f4xx.o: ../Drivers/CMSIS/Include/cmsis_version.h
 gyroscope\system_stm32f4xx.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 gyroscope\system_stm32f4xx.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -14,7 +14,7 @@ gyroscope\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_
 gyroscope\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 gyroscope\system_stm32f4xx.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 gyroscope\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-gyroscope\system_stm32f4xx.o: D:\ARM\ARMCC\Bin\..\include\stddef.h
+gyroscope\system_stm32f4xx.o: G:\mdk5\ARM\ARMCC\Bin\..\include\stddef.h
 gyroscope\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 gyroscope\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 gyroscope\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h

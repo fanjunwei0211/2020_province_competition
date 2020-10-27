@@ -11,6 +11,6 @@
 ".\obj\stm32f10x_usart.o"
 ".\obj\startup_stm32f10x_hd.o"
 --library_type=microlib --strict --scatter ".\Obj\Project.sct"
---summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\List\Project.map" -o .\Obj\Project.axf

@@ -832,13 +832,14 @@ ARM Macro Assembler    Page 13
   423 0000001C                 END
               00000000 
               00000000 
-Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
-interwork --depend=gyroscope\startup_stm32f407xx.d -ogyroscope\startup_stm32f40
-7xx.o -I.\RTE\_Gyroscope -ID:\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include -ID:\
-ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --
-predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 529" --predef
-ine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --list=startup_stm32f407xx.
-lst startup_stm32f407xx.s
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=gyroscope\startup_stm32f407xx.d -ogyroscope\startup_stm32f407xx
+.o -I"G:\gitkraken repo\new_province\2020_province_competition\MCU\MODULE\Gyros
+cope\MDK-ARM\RTE" -IG:\mdk5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include -IG:\mdk5\AR
+M\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --pre
+define="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 521" --predefine
+="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --list=startup_stm32f407xx.lst
+ startup_stm32f407xx.s
 
 
 

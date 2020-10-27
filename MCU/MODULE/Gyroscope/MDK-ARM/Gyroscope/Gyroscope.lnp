@@ -1,4 +1,4 @@
---cpu=Cortex-M4.fp.sp
+--cpu Cortex-M4.fp
 "gyroscope\startup_stm32f407xx.o"
 "gyroscope\main.o"
 "gyroscope\gpio.o"
@@ -26,6 +26,6 @@
 "gyroscope\led.o"
 "gyroscope\jy901.o"
 --library_type=microlib --strict --scatter "Gyroscope\Gyroscope.sct"
---summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "Gyroscope.map" -o Gyroscope\Gyroscope.axf

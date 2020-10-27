@@ -248,3 +248,6 @@
 2020-10-22 18:50:40   E:\stm32\陀螺仪WT901C\WT901C\上位机\标准上位机_WT901C\temp\UpdateFileList0.txt
 2020-10-22 18:50:44   E:\stm32\陀螺仪WT901C\WT901C\上位机\标准上位机_WT901C\temp\UpdateFileList0.txt
 2020-10-22 19:02:07   E:\stm32\陀螺仪WT901C\WT901C\上位机\标准上位机_WT901C\temp\UpdateFileList0.txt
+2020-10-25 15:31:29   G:\gitkraken repo\new_province\2020_province_competition\MCU\MODULE\WT901C\上位机\标准上位机_WT901C\temp\UpdateFileList0.txt
+2020-10-25 15:45:57   G:\gitkraken repo\new_province\2020_province_competition\MCU\MODULE\WT901C\上位机\标准上位机_WT901C\temp\UpdateFileList0.txt
+2020-10-25 16:13:57   G:\gitkraken repo\new_province\2020_province_competition\MCU\MODULE\WT901C\上位机\标准上位机_WT901C\temp\UpdateFileList0.txt

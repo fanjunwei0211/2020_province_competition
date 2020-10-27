@@ -2,7 +2,7 @@
 #include "main.h"
 
 extern UART_HandleTypeDef huart1;
-extern UART_HandleTypeDef huart3;
+extern UART_HandleTypeDef huart2;
 
 #define U1
 
@@ -17,7 +17,7 @@ PUTCHAR_PROTOTYPE
 #ifdef U1
 	HAL_UART_Transmit(&huart1 , (uint8_t *)&ch, 1, 0xFFFF);
 #else
-	HAL_UART_Transmit(&huart3 , (uint8_t *)&ch, 1, 0xFFFF);
+	HAL_UART_Transmit(&huart2 , (uint8_t *)&ch, 1, 0xFFFF);
 #endif
 	return ch;
 }
