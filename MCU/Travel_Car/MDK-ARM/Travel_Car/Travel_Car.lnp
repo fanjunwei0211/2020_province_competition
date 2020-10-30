@@ -27,6 +27,9 @@
 "travel_car\sensor8.o"
 "travel_car\motor.o"
 "travel_car\encoder.o"
+"travel_car\pid.o"
+"travel_car\datascope_dp.o"
+"travel_car\printf.o"
 --library_type=microlib --strict --scatter "Travel_Car\Travel_Car.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

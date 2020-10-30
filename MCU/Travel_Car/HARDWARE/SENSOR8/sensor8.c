@@ -49,14 +49,14 @@ void Read_Data(uint16_t *Data)
 	
 /*---------------------------数字量数值----------------------------*/	
 	
-	while(Num != 1)
+	if(Num != 1)
 	{
 		
 		HAL_Delay(1);
 		if(y>5)
 		{
 			y=0;
-			break;
+			return ;
 		}
 		y++;
 	}

@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc; ../Drivers/STM32F4xx_HAL_Driver/Inc; ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy; ../Drivers/CMSIS/Device/ST/STM32F4xx/Include; ../Drivers/CMSIS/Include; ..\HARDWARE\LED; ..\HARDWARE\SENSOR8; ..\HARDWARE\MOTOR; ..\HARDWARE\ENCODER</IncludePath>
+              <IncludePath>../Core/Inc;      ../Drivers/STM32F4xx_HAL_Driver/Inc;      ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;      ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;      ../Drivers/CMSIS/Include;      ..\HARDWARE\LED;      ..\HARDWARE\SENSOR8;      ..\HARDWARE\MOTOR;      ..\HARDWARE\ENCODER;      ..\HARDWARE\PID;      ..\HARDWARE\DataScope_DP;      ..\HARDWARE\PRINTF</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -541,6 +541,21 @@
               <FileName>encoder.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\ENCODER\encoder.c</FilePath>
+            </File>
+            <File>
+              <FileName>pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\PID\pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>DataScope_DP.C</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\DataScope_DP\DataScope_DP.C</FilePath>
+            </File>
+            <File>
+              <FileName>Printf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\PRINTF\Printf.c</FilePath>
             </File>
           </Files>
         </Group>

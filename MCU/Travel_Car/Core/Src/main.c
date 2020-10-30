@@ -25,10 +25,19 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <string.h> 
+#include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <math.h>
 #include "led.h"
 #include "sensor8.h"
 #include "motor.h"
 #include "encoder.h"
+#include "pid.h"
+#include "printf.h"
+#include "DataScope_DP.h"
+
 
 /* USER CODE END Includes */
 
@@ -50,8 +59,16 @@
 
 /* USER CODE BEGIN PV */
 //int Sensor_Value;
-uint16_t Temp[2]={0};
+uint16_t Temp_Value[2]={0};
 int Encoder1,Encoder2,Encoder3,Encoder4;
+int moto1=200,moto2,moto3,moto4;
+int Target_Speed = 80; //满辐大概180
+
+pid_typedef pid1,pid2,pid3,pid4;
+
+
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -63,6 +80,29 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+/*-------------------------上位机---------------------------*/
+
+void Data_Send()
+{
+	int Send_Count;
+	DataScope_Get_Channel_Data(Encoder3, 1 );
+	DataScope_Get_Channel_Data(Target_Speed, 2 );
+	DataScope_Get_Channel_Data( Encoder4, 3 ); 
+	DataScope_Get_Channel_Data( 0 , 4 );   
+	DataScope_Get_Channel_Data(0, 5 );
+	DataScope_Get_Channel_Data(0 , 6 );
+	DataScope_Get_Channel_Data(0, 7 );
+	DataScope_Get_Channel_Data( 0, 8 ); 
+	DataScope_Get_Channel_Data(0, 9 );  
+	DataScope_Get_Channel_Data( 0 , 10);
+	Send_Count = DataScope_Data_Generate(10);
+	for(int i = 0 ; i < Send_Count; i++) 
+	{
+		while((USART1->SR&0X40)==0);  
+		USART1->DR = DataScope_OutPut_Buffer[i]; 
+	}
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -72,7 +112,7 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+	int n=0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -98,24 +138,39 @@ int main(void)
   MX_USART3_UART_Init();
   MX_TIM2_Init();
   MX_TIM3_Init();
+  MX_TIM8_Init();
+  MX_TIM4_Init();
+  MX_TIM5_Init();
+  MX_TIM10_Init();
   /* USER CODE BEGIN 2 */
+	HAL_TIM_Base_Start_IT(&htim10);
 	Sensor_Init();
 	Motor_Start();
-	HAL_TIM_Encoder_Start(&htim3,TIM_CHANNEL_ALL);
-//	Encoder_start();
+	Encoder_start();
+	
+	Set_Pwm1(300);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	TIM2->CCR2 = 0;
-	HAL_GPIO_WritePin(AIN3_GPIO_Port,AIN3_Pin,GPIO_PIN_SET);
-	HAL_GPIO_WritePin(AIN4_GPIO_Port,AIN4_Pin,GPIO_PIN_RESET);
+	
   while (1)
   {
-//		Read_Data(Temp);  //这个函数只有检测到才会停止，如果传感器出现了错误会一直卡在这里
-//		Encoder1 = Read_Encoder(3);
-		Encoder1 = (short)TIM3->CNT;
+		Read_Data(Temp_Value);  //这个函数只有检测到才会停止，如果传感器出现了错误会一直卡在这里
+		
+//		Data_Send();
 //		Led_Flash(1);
+//		HAL_GPIO_WritePin(AIN3_GPIO_Port,AIN3_Pin,GPIO_PIN_SET);
+//		HAL_GPIO_WritePin(AIN4_GPIO_Port,AIN4_Pin,GPIO_PIN_RESET);
+//		TIM2->CCR2 = 200;
+		n++;
+		if(n>200)
+		{
+			n=0;
+			Target_Speed +=20;
+			if(Target_Speed >= 180)
+				Target_Speed = 50;
+		}
 		HAL_Delay(10);
     /* USER CODE END WHILE */
 
@@ -168,7 +223,31 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	static int Tim_Delay=0;
+	if(htim->Instance == TIM10)   //0.1ms
+	{
+		Tim_Delay++;
+		if(Tim_Delay >= 100) //100->10ms
+		{
+			Tim_Delay = 0;
+			
+			Encoder1 = Read_Encoder(3);
+			Encoder2 = Read_Encoder(4);
+			Encoder3 = Read_Encoder(8);
+			Encoder4 = Read_Encoder(5);
+			moto1 = Incremental_PI_A(Encoder1,Target_Speed);
+			moto2 = Incremental_PI_B(Encoder2,Target_Speed);
+			moto3 = Incremental_PI_C(Encoder3,Target_Speed);
+			moto4 = Incremental_PI_D(Encoder4,Target_Speed);
+			Set_Pwm(0, 0, moto3, moto4);
+//			Set_Pwm(0,0,500,0);
+//			Set_Pwm1(500);
+			Led_Flash(100);
+		}
+	}
+}
 /* USER CODE END 4 */
 
 /**
