@@ -44,4 +44,6 @@ travel_car\main.o: ..\HARDWARE\MOTOR\motor.h
 travel_car\main.o: ..\HARDWARE\ENCODER\encoder.h
 travel_car\main.o: ..\HARDWARE\PID\pid.h
 travel_car\main.o: ..\HARDWARE\PRINTF\printf.h
+travel_car\main.o: ..\HARDWARE\KEY\key.h
+travel_car\main.o: ..\HARDWARE\CONTROL\control.h
 travel_car\main.o: ..\HARDWARE\DataScope_DP\DataScope_DP.h

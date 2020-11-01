@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;      ../Drivers/STM32F4xx_HAL_Driver/Inc;      ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;      ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;      ../Drivers/CMSIS/Include;      ..\HARDWARE\LED;      ..\HARDWARE\SENSOR8;      ..\HARDWARE\MOTOR;      ..\HARDWARE\ENCODER;      ..\HARDWARE\PID;      ..\HARDWARE\DataScope_DP;      ..\HARDWARE\PRINTF</IncludePath>
+              <IncludePath>../Core/Inc; ../Drivers/STM32F4xx_HAL_Driver/Inc; ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy; ../Drivers/CMSIS/Device/ST/STM32F4xx/Include; ../Drivers/CMSIS/Include; ..\HARDWARE\LED; ..\HARDWARE\SENSOR8; ..\HARDWARE\MOTOR; ..\HARDWARE\ENCODER; ..\HARDWARE\PID; ..\HARDWARE\DataScope_DP; ..\HARDWARE\PRINTF; ..\HARDWARE\CONTROL; ..\HARDWARE\KEY</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -556,6 +556,16 @@
               <FileName>Printf.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\PRINTF\Printf.c</FilePath>
+            </File>
+            <File>
+              <FileName>control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\CONTROL\control.c</FilePath>
+            </File>
+            <File>
+              <FileName>key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\KEY\key.c</FilePath>
             </File>
           </Files>
         </Group>

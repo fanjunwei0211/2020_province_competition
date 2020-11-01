@@ -7,43 +7,43 @@ uint8_t USART_RX_STA[3] = { 0 };       //接收状态标记
 int Num;
 
 
-/*********************************************************************
- *  函数名称：Read_Data(int *Data)
- *  函数功能：读取串口数据并赋给数据缓存区
- *  形    参：*Data，指针
- *  输    出：无
- *  备    注：
- *			   	   
- ********************************************************************/    
-int Read_Data1()	       
-{	
-	int Receive_data = 0;       //数据缓存区
-	uint8_t Temp=0x57;
-	HAL_UART_Transmit(&huart3, &Temp, 1, 1000);
-	
-	while(1)
-  {
-		if(USART_RX_STA[0] != 0x75) { Num = 0; }  //判断帧头0x75,否者重新接收
-		if(Num == 3)
-		{
-			Num = 0;
-			if(USART_RX_STA[2] == 0x02)  //判断帧尾0x02,否者不赋值
-			{
-				Receive_data = USART_RX_STA[1];				       				
-			}        
-			break;
-		}
-		HAL_UART_Transmit(&huart3, &Temp, 1, 1000);
-	}
-	return  Receive_data;
-/*--------------------------数字量数值----------------------------*/	
-}
+///*********************************************************************
+// *  函数名称：Read_Data(int *Data)
+// *  函数功能：读取串口数据并赋给数据缓存区
+// *  形    参：*Data，指针
+// *  输    出：无
+// *  备    注：
+// *			   	   
+// ********************************************************************/    
+//int Read_Data1()	       
+//{	
+//	int Receive_data = 0;       //数据缓存区
+//	uint8_t Temp=0x57;
+//	HAL_UART_Transmit(&huart3, &Temp, 1, 1000);
+//	
+//	while(1)
+//  {
+//		if(USART_RX_STA[0] != 0x75) { Num = 0; }  //判断帧头0x75,否者重新接收
+//		if(Num == 3)
+//		{
+//			Num = 0;
+//			if(USART_RX_STA[2] == 0x02)  //判断帧尾0x02,否者不赋值
+//			{
+//				Receive_data = USART_RX_STA[1];				       				
+//			}        
+//			break;
+//		}
+//		HAL_UART_Transmit(&huart3, &Temp, 1, 1000);
+//	}
+//	return  Receive_data;
+///*--------------------------数字量数值----------------------------*/	
+//}
 
 
-void Read_Data(uint16_t *Data)	       
+void Read_Data(int *Data)	       
 {	
 	uint8_t y=0;
-//	uint16_t Receive_data = 0;       //数据缓存区
+	int Receive_data = 0;       //数据缓存区
 	uint8_t Temp=0x57;
 	HAL_UART_Transmit(&huart3, &Temp, 1, 1000);
 	
@@ -66,14 +66,16 @@ void Read_Data(uint16_t *Data)
 
 ///////////////////////////偏移量数值///////////////////////////////	
 	
-//	while(Num != 3)
+//	if(Num != 3)
 //	{
 //		
-//		Delay_ms(1);
+//		HAL_Delay(1);
 //		if(y>10)
 //		{
 //			y=0;
-//			break;
+//			uint8_t Temp=0x57;
+//			HAL_UART_Transmit(&huart3, &Temp, 1, 1000);
+//			return;
 //		}
 //		y++;
 //	}
@@ -123,3 +125,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	HAL_UART_Receive_IT(&huart3,&USART_RX_STA[Num++],1);
 }
+
+
+
+
