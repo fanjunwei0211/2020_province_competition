@@ -46,18 +46,6 @@ void Set_Pwm(int moto1, int moto2, int moto3, int moto4)
 	
 	if(moto3 > 0)
 	{
-		HAL_GPIO_WritePin(BIN1_GPIO_Port,BIN1_Pin,GPIO_PIN_SET);
-		HAL_GPIO_WritePin(BIN2_GPIO_Port,BIN2_Pin,GPIO_PIN_RESET);
-	}
-	else 
-	{
-		HAL_GPIO_WritePin(BIN1_GPIO_Port,BIN1_Pin,GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(BIN2_GPIO_Port,BIN2_Pin,GPIO_PIN_SET);
-	}
-	TIM2->CCR4 = myabs(moto3);
-	
-	if(moto4 > 0)
-	{
 		HAL_GPIO_WritePin(BIN3_GPIO_Port,BIN3_Pin,GPIO_PIN_SET);
 		HAL_GPIO_WritePin(BIN4_GPIO_Port,BIN4_Pin,GPIO_PIN_RESET);
 	}
@@ -65,6 +53,18 @@ void Set_Pwm(int moto1, int moto2, int moto3, int moto4)
 	{
 		HAL_GPIO_WritePin(BIN3_GPIO_Port,BIN3_Pin,GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(BIN4_GPIO_Port,BIN4_Pin,GPIO_PIN_SET);
+	}
+	TIM2->CCR4 = myabs(moto3);
+	
+	if(moto4 > 0)
+	{
+		HAL_GPIO_WritePin(BIN1_GPIO_Port,BIN1_Pin,GPIO_PIN_SET);
+		HAL_GPIO_WritePin(BIN2_GPIO_Port,BIN2_Pin,GPIO_PIN_RESET);
+	}
+	else 
+	{
+		HAL_GPIO_WritePin(BIN1_GPIO_Port,BIN1_Pin,GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(BIN2_GPIO_Port,BIN2_Pin,GPIO_PIN_SET);
 	}
 	TIM2->CCR3 = myabs(moto4);
 }

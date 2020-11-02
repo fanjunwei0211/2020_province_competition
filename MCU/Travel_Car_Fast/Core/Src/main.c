@@ -190,51 +190,48 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	
-	Move_Flag = 1;
+	Move_Flag = 0;
 	
   while (1)
   {
-		Sensor_Get();
-		HAL_Delay(2);
-		if(Zhijiao_Flag == 0)
-		{
-			track_zhixian_PID();
-		}
-		else
-		{
-			if(Zhijiao_Detect())
-			{
-				Target_L = Target_R = 50;
-				HAL_Delay(10);
-				while(1)
-				{
-//					Move_Flag = 0;
-					HAL_Delay(2);
-					Target_L = -60;
-					Target_R = 60;
-					Sensor_Get();
-					if(Sensor[3]==0 || Sensor[4]==0 || Sensor[5]==0 || Sensor[6]==0 || Sensor[7]==0)
-						break;
-				}
-			}
-//			track_zhixian_PID();
-		}
-//		if(Roll_Value < -15 || Roll_Value > 15)
+//		Sensor_Get();
+//		HAL_Delay(2);
+//		if(Zhijiao_Flag == 0)
 //		{
-////			Target_Speed = 50;
 //			track_zhixian_PID();
 //		}
 //		else
 //		{
-//			Target_Speed = SPEED;
-//			track_zhixian_PID();
+//			if(Zhijiao_Detect())
+//			{
+//				Target_L = Target_R = 50;
+//				HAL_Delay(10);
+//				while(1)
+//				{
+////					Move_Flag = 0;
+//					HAL_Delay(2);
+//					Target_L = -60;
+//					Target_R = 60;
+//					Sensor_Get();
+//					if(Sensor[3]==0 || Sensor[4]==0 || Sensor[5]==0 || Sensor[6]==0 || Sensor[7]==0)
+//						break;
+//				}
+//			}
+////			track_zhixian_PID();
 //		}
-		
-		XianFu();
-
-			
-		
-
+//		XianFu();
+////		if(Roll_Value < -15 || Roll_Value > 15)
+////		{
+//////			Target_Speed = 50;
+////			track_zhixian_PID();
+////		}
+////		else
+////		{
+////			Target_Speed = SPEED;
+////			track_zhixian_PID();
+////		}
+//		
+		Set_Pwm(0,0,0,400);
 		
 		
 //		HAL_Delay(5);
@@ -366,7 +363,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			}
 			else
 			{
-				Set_Pwm(0,0,0,0);
+//				Set_Pwm(0,0,0,0);
 			}
 			
 		}
