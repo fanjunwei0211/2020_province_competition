@@ -282,6 +282,110 @@ void track_zhixian_PID()
 	}
 	else
 	{
+		
+		for(int i=0; i<8; i++)
+		{
+			Sensor[i] = Last_Sensor[i];
+		}
+	}
+	
+	for(int i=0; i<8; i++)
+	{
+		Last_Sensor[i] = Sensor[i];
+	}
+	Speed+=Velocity_KP*(Bias-Last_bias)+Velocity_KI*Bias;   //增量式PI控制器
+	Last_bias=Bias;	  	
+	Target_L = Target_Speed-Speed;  //整体左偏时Speed为负,整体右偏为正
+	Target_R = Target_Speed+Speed;
+
+}
+
+void track_zhixian_PID_Po()
+{
+	static int Last_Sensor[8];	
+	float Velocity_KP=5,Velocity_KI=0;	
+	static int Bias,Speed,Last_bias;
+	                 //保存上一次偏差                      
+	
+	if(Sensor[3] == 0 && Sensor[4] == 0)
+	{
+		Bias = 0;
+	}
+	else if(Sensor[3]==0 && Sensor[4]!=0)
+	{
+		Bias = 2;
+	}
+	else if(Sensor[3]!=0 && Sensor[4]==0)
+	{
+		Bias = -2;
+	}
+	else if(Sensor[2]!=0 && Sensor[3]==0)
+	{
+		Bias =4;
+	}
+	else if(Sensor[2]==0 && Sensor[3]!=0)
+	{
+		Bias = 6;
+	}
+	else if(Sensor[2]==0 && Sensor[3]==0)
+	{
+		Bias = 6;
+	}
+	else if(Sensor[1]!=0 && Sensor[2]==0)
+	{
+		Bias = 8;
+	}
+	else if(Sensor[1]==0 && Sensor[2]==0)
+	{
+		Bias = 8;
+	}
+	else if(Sensor[0]!=0 && Sensor[1]==0)
+	{
+		Bias = 10;
+	}
+	else if(Sensor[0]==0 && Sensor[1]==0)
+	{
+		Bias = 10;
+	}
+	else if(Sensor[0]==0 && Sensor[1]!=0)
+	{
+		Bias = 12;
+	}
+	else if(Sensor[4]==0 && Sensor[5]!=0)
+	{
+		Bias = -4;
+	}
+	else if(Sensor[4]!=0 && Sensor[5]==0)
+	{
+		Bias = -6;
+	}
+	else if(Sensor[4]==0 && Sensor[5]==0)
+	{
+		Bias = -6;
+	}
+	else if(Sensor[5]==0 && Sensor[6]!=0)
+	{
+		Bias = -8;
+	}
+	else if(Sensor[5]==0 && Sensor[6]==0)
+	{
+		Bias = -8;
+	}
+	else if(Sensor[6]==0 && Sensor[7]!=0)
+	{
+		Bias = -10;
+	}
+	else if(Sensor[6]==0 && Sensor[7]==0)
+	{
+		Bias = -10;
+	}
+	else if(Sensor[6]!=0 && Sensor[7]==0)
+	{
+		Bias = -12;
+	}
+	else
+	{
+		
 		Target_L = Target_Speed;
 		Target_R = Target_Speed;
 	}
@@ -290,7 +394,6 @@ void track_zhixian_PID()
 	{
 		Last_Sensor[i] = Sensor[i];
 	}
-//	Bias=Target-Encoder;                //计算偏差
 	Speed+=Velocity_KP*(Bias-Last_bias)+Velocity_KI*Bias;   //增量式PI控制器
 	Last_bias=Bias;	  	
 	Target_L = Target_Speed-Speed;  //整体左偏时Speed为负,整体右偏为正
@@ -298,13 +401,19 @@ void track_zhixian_PID()
 
 }
 
+
 int Zhijiao_Detect()
 {
-	int Cnt=0;
+	int Cnt=0,CntR=0;
 	for(int i=0; i< 4; i++)
 	{
 		if(Sensor[i] == 0)
 			Cnt++;
+	}
+	for(int i=4; i<8; i++)
+	{	
+		if(Sensor[i] == 0)
+			CntR++;
 	}
 	if(Cnt>=3)
 		return 1;

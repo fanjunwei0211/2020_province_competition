@@ -6,6 +6,7 @@ void track_zhixian_Po(void);
 void Sensor_Get(void);
 void XianFu(void);
 void track_zhixian_PID();
+void track_zhixian_PID_Po(void);
 int Zhijiao_Detect(void);
 //void track_PID(int pwm,float P);
 #endif

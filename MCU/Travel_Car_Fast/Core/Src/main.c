@@ -73,6 +73,8 @@ int Target_Speed = 50;
 int Sensor[8]={0};
 int Zhijiao_Flag = 0;   //设定直角程序  1->是直角程序  小灯熄灭
 float Roll_Value;
+int PoState = 0;
+int Encoder_State = 1;
 
 /*---------------------------------陀螺仪------------------------------*/
 char ACCCALSW[5] = {0XFF,0XAA,0X01,0X01,0X00};//进入加速度校准模式
@@ -190,48 +192,58 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	
-	Move_Flag = 0;
+	Move_Flag = 1;
 	
   while (1)
   {
-//		Sensor_Get();
-//		HAL_Delay(2);
-//		if(Zhijiao_Flag == 0)
+		Sensor_Get();
+		HAL_Delay(2);
+		if(Zhijiao_Flag == 0)
+		{
+			if(PoState == 0)
+				track_zhixian_PID();
+			else if(PoState == 1)
+				track_zhixian_PID_Po();
+		}
+		else
+		{
+			if(Zhijiao_Detect())
+			{
+				Encoder_State = 0;
+				Target_L = Target_R = 50;
+				
+				HAL_Delay(10);
+				while(1)
+				{
+//					Move_Flag = 0;
+					HAL_Delay(2);
+					Target_L = -50;
+					Target_R = 50;
+					Sensor_Get();
+					if(Sensor[3]==0 || Sensor[4]==0 || Sensor[5]==0 || Sensor[6]==0 || Sensor[7]==0)
+					{
+//						Target_L = Target_R = 50;
+//						HAL_Delay(5);
+						break;
+					}
+						
+				}
+			}
+//			track_zhixian_PID();
+		}
+		XianFu();
+//		if(Roll_Value < -15 || Roll_Value > 15)
 //		{
+////			Target_Speed = 50;
 //			track_zhixian_PID();
 //		}
 //		else
 //		{
-//			if(Zhijiao_Detect())
-//			{
-//				Target_L = Target_R = 50;
-//				HAL_Delay(10);
-//				while(1)
-//				{
-////					Move_Flag = 0;
-//					HAL_Delay(2);
-//					Target_L = -60;
-//					Target_R = 60;
-//					Sensor_Get();
-//					if(Sensor[3]==0 || Sensor[4]==0 || Sensor[5]==0 || Sensor[6]==0 || Sensor[7]==0)
-//						break;
-//				}
-//			}
-////			track_zhixian_PID();
+//			Target_Speed = SPEED;
+//			track_zhixian_PID();
 //		}
-//		XianFu();
-////		if(Roll_Value < -15 || Roll_Value > 15)
-////		{
-//////			Target_Speed = 50;
-////			track_zhixian_PID();
-////		}
-////		else
-////		{
-////			Target_Speed = SPEED;
-////			track_zhixian_PID();
-////		}
-//		
-		Set_Pwm(0,0,0,400);
+		
+//		Set_Pwm(0,0,400,0);
 		
 		
 //		HAL_Delay(5);
@@ -329,10 +341,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			Roll_Value = (float)stcAngle.Angle[0]/32768*180;  //陀螺仪俯仰角
 			if(Roll_Value < -15 || Roll_Value > 15)
 			{
-//				Target_Speed = 50;
+				Target_Speed = 50;
+				PoState = 1;
 			}
 			else
 			{
+				PoState = 0;
 				Target_Speed = SPEED;
 			}
 			
@@ -347,10 +361,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		{
 			Tim_Delay = 0;
 			
-			Encoder1 = Read_Encoder(3);
-			Encoder2 = Read_Encoder(4);
-			Encoder3 = Read_Encoder(5);
-			Encoder4 = Read_Encoder(8);
+			if(Encoder_State == 1)
+			{
+				Encoder1 = Read_Encoder(3);
+				Encoder2 = Read_Encoder(4);
+				Encoder3 = Read_Encoder(5);
+				Encoder4 = Read_Encoder(8);
+			}
 			
 			if(Move_Flag == 1)
 			{
@@ -363,7 +380,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			}
 			else
 			{
-//				Set_Pwm(0,0,0,0);
+				Set_Pwm(0,0,0,0);
 			}
 			
 		}
