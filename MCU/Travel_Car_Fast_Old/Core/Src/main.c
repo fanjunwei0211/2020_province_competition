@@ -372,7 +372,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 				moto2 = Incremental_PI_B(Encoder2,Target_L);
 				moto3 = Incremental_PI_C(Encoder3,Target_R);
 				moto4 = Incremental_PI_D(Encoder4,Target_R);
-				Set_Pwm(moto1, moto2, moto3, moto4);
+//				Set_Pwm(moto1, moto2, moto3, moto4);
+				Set_Pwm(-300,0,0,0);
 				Led_Flash(100);
 			}
 			else

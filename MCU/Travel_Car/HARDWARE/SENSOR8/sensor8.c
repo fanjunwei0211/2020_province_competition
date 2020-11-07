@@ -49,42 +49,42 @@ void Read_Data(int *Data)
 	
 /*---------------------------数字量数值----------------------------*/	
 	
-	if(Num != 1)
-	{
-		
-		HAL_Delay(1);
-		if(y>5)
-		{
-			y=0;
-			return ;
-		}
-		y++;
-	}
-	*Data = USART_RX_STA[0];
+//	if(Num != 1)
+//	{
+//		
+//		HAL_Delay(1);
+//		if(y>5)
+//		{
+//			y=0;
+//			return ;
+//		}
+//		y++;
+//	}
+//	*Data = USART_RX_STA[0];
 	
 /////////////////////////数字量数值///////////////////////////////	
 
 ///////////////////////////偏移量数值///////////////////////////////	
 	
-//	if(Num != 3)
-//	{
-//		
-//		HAL_Delay(1);
-//		if(y>10)
-//		{
-//			y=0;
+	if(Num != 3)
+	{
+		
+		HAL_Delay(1);
+		if(y>10)
+		{
+			y=0;
 //			uint8_t Temp=0x57;
 //			HAL_UART_Transmit(&huart3, &Temp, 1, 1000);
-//			return;
-//		}
-//		y++;
-//	}
-//	Receive_data = USART_RX_STA[1];
-//	Receive_data <<= 8;
-//	Receive_data |= USART_RX_STA[2];
+			return;
+		}
+		y++;
+	}
+	Receive_data = USART_RX_STA[1];
+	Receive_data <<= 8;
+	Receive_data |= USART_RX_STA[2];
 
-//	*Data = USART_RX_STA[0];
-//	*(Data+1) = Receive_data;
+	*Data = USART_RX_STA[0];
+	*(Data+1) = Receive_data;
 	
 ///////////////////////////偏移量数值///////////////////////////////	
 

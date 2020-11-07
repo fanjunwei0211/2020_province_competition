@@ -25,13 +25,7 @@
 "travel_car\system_stm32f4xx.o"
 "travel_car\led.o"
 "travel_car\sensor8.o"
-"travel_car\motor.o"
-"travel_car\encoder.o"
-"travel_car\pid.o"
-"travel_car\datascope_dp.o"
 "travel_car\printf.o"
-"travel_car\control.o"
-"travel_car\key.o"
 --library_type=microlib --strict --scatter "Travel_Car\Travel_Car.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

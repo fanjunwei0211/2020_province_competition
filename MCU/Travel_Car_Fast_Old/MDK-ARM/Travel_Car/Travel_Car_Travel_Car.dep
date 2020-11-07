@@ -1,7 +1,7 @@
 Dependencies for Project 'Travel_Car', Target 'Travel_Car': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
 F (startup_stm32f407xx.s)(0x5F9D6B10)(--cpu Cortex-M4.fp.sp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Travel_Car-ID:\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-ID:\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 529" --pd "_RTE_ SETA 1" --pd "STM32F407xx SETA 1"--list startup_stm32f407xx.lst --xref -o travel_car\startup_stm32f407xx.o --depend travel_car\startup_stm32f407xx.d)
-F (../Core/Src/main.c)(0x5FA02CB9)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\HARDWARE\LED -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\PID -I ..\HARDWARE\DataScope_DP -I ..\HARDWARE\PRINTF -I ..\HARDWARE\CONTROL -I ..\HARDWARE\KEY -I ..\HARDWARE\WT901-I.\RTE\_Travel_Car-ID:\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-ID:\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o travel_car\main.o --omf_browse travel_car\main.crf --depend travel_car\main.d)
+F (../Core/Src/main.c)(0x5FA425D1)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\HARDWARE\LED -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\PID -I ..\HARDWARE\DataScope_DP -I ..\HARDWARE\PRINTF -I ..\HARDWARE\CONTROL -I ..\HARDWARE\KEY -I ..\HARDWARE\WT901-I.\RTE\_Travel_Car-ID:\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-ID:\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o travel_car\main.o --omf_browse travel_car\main.crf --depend travel_car\main.d)
 I (../Core/Inc/main.h)(0x5F9D6B0E)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x5F5C2092)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x5F9D6B0E)
@@ -774,7 +774,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x5F5C2092)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x5F5C2092)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5F5C2092)
 I (../Core/Inc/gpio.h)(0x5F9D6B0D)
-F (..\HARDWARE\MOTOR\motor.c)(0x5FA02646)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\HARDWARE\LED -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\PID -I ..\HARDWARE\DataScope_DP -I ..\HARDWARE\PRINTF -I ..\HARDWARE\CONTROL -I ..\HARDWARE\KEY -I ..\HARDWARE\WT901-I.\RTE\_Travel_Car-ID:\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-ID:\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o travel_car\motor.o --omf_browse travel_car\motor.crf --depend travel_car\motor.d)
+F (..\HARDWARE\MOTOR\motor.c)(0x5FA425A3)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\HARDWARE\LED -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\PID -I ..\HARDWARE\DataScope_DP -I ..\HARDWARE\PRINTF -I ..\HARDWARE\CONTROL -I ..\HARDWARE\KEY -I ..\HARDWARE\WT901-I.\RTE\_Travel_Car-ID:\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-ID:\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o travel_car\motor.o --omf_browse travel_car\motor.crf --depend travel_car\motor.d)
 I (../Core/Inc/main.h)(0x5F9D6B0E)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x5F5C2092)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x5F9D6B0E)
@@ -874,6 +874,40 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x5F5C2092)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x5F5C2092)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x5F5C2092)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5F5C2092)
+F (..\HARDWARE\CONTROL\control.c)(0x5FA02749)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\HARDWARE\LED -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\PID -I ..\HARDWARE\DataScope_DP -I ..\HARDWARE\PRINTF -I ..\HARDWARE\CONTROL -I ..\HARDWARE\KEY -I ..\HARDWARE\WT901-I.\RTE\_Travel_Car-ID:\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-ID:\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o travel_car\control.o --omf_browse travel_car\control.crf --depend travel_car\control.d)
+I (../Core/Inc/main.h)(0x5F9D6B0E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x5F5C2092)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x5F9D6B0E)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x5F5C2092)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x5F5C2092)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x5F5C2003)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x5F5C2003)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x5F5C200A)
+I (D:\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F5C200A)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F5C200A)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F5C200A)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F5C200A)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x5F5C2003)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F5C2092)
+I (D:\ARM\ARMCC\include\stddef.h)(0x5D9AD218)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x5F5C2092)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x5F5C2092)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x5F5C2092)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x5F5C2092)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x5F5C2092)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x5F5C2092)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x5F5C2092)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x5F5C2092)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x5F5C2092)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x5F5C2092)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x5F5C2092)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x5F5C2092)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x5F5C2092)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x5F5C2092)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5F5C2092)
+I (..\HARDWARE\CONTROL\control.h)(0x5F9DB37F)
+I (../Core/Inc/gpio.h)(0x5F9D6B0D)
 F (..\HARDWARE\DataScope_DP\DataScope_DP.C)(0x5F9AA984)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\HARDWARE\LED -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\PID -I ..\HARDWARE\DataScope_DP -I ..\HARDWARE\PRINTF -I ..\HARDWARE\CONTROL -I ..\HARDWARE\KEY -I ..\HARDWARE\WT901-I.\RTE\_Travel_Car-ID:\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-ID:\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o travel_car\datascope_dp.o --omf_browse travel_car\datascope_dp.crf --depend travel_car\datascope_dp.d)
 I (..\HARDWARE\DataScope_DP\DataScope_DP.h)(0x5F938AB7)
 I (../Core/Inc/usart.h)(0x5F9D6B0E)
@@ -941,40 +975,6 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x5F5C2092)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x5F5C2092)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x5F5C2092)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5F5C2092)
-F (..\HARDWARE\CONTROL\control.c)(0x5FA02749)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\HARDWARE\LED -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\PID -I ..\HARDWARE\DataScope_DP -I ..\HARDWARE\PRINTF -I ..\HARDWARE\CONTROL -I ..\HARDWARE\KEY -I ..\HARDWARE\WT901-I.\RTE\_Travel_Car-ID:\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-ID:\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o travel_car\control.o --omf_browse travel_car\control.crf --depend travel_car\control.d)
-I (../Core/Inc/main.h)(0x5F9D6B0E)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x5F5C2092)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x5F9D6B0E)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x5F5C2092)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x5F5C2092)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x5F5C2003)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x5F5C2003)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x5F5C200A)
-I (D:\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5F5C200A)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5F5C200A)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5F5C200A)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x5F5C200A)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x5F5C2003)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x5F5C2092)
-I (D:\ARM\ARMCC\include\stddef.h)(0x5D9AD218)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x5F5C2092)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x5F5C2092)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x5F5C2092)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x5F5C2092)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x5F5C2092)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x5F5C2092)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x5F5C2092)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x5F5C2092)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x5F5C2092)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x5F5C2092)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x5F5C2092)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x5F5C2092)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x5F5C2092)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x5F5C2092)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5F5C2092)
-I (..\HARDWARE\CONTROL\control.h)(0x5F9DB37F)
-I (../Core/Inc/gpio.h)(0x5F9D6B0D)
 F (..\HARDWARE\KEY\key.c)(0x5F9B8A61)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ..\HARDWARE\LED -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\PID -I ..\HARDWARE\DataScope_DP -I ..\HARDWARE\PRINTF -I ..\HARDWARE\CONTROL -I ..\HARDWARE\KEY -I ..\HARDWARE\WT901-I.\RTE\_Travel_Car-ID:\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-ID:\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER -DSTM32F407xx-o travel_car\key.o --omf_browse travel_car\key.crf --depend travel_car\key.d)
 I (..\HARDWARE\KEY\key.h)(0x5F5624AF)
 I (../Core/Inc/main.h)(0x5F9D6B0E)
