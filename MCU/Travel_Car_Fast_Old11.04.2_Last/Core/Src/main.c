@@ -204,39 +204,9 @@ int main(void)
   {
 		Sensor_Get();
 		HAL_Delay(2);
-//		if(Yaw_Init-Yaw_Value<-100 || Yaw_Init-Yaw_Value>100)
-//			{
-//				if(Roll_Value < -12 || Roll_Value > 12)
-//				{
-//					Target_Speed = 50;
-//				}
-//				else
-//				{
-//					Target_Speed = SPEED;
-//				}
-//			}
-//			else
-//			{
-//				if(-20 < Roll_Value && Roll_Value < -10 )
-//				{
-//					Po_Delay ++;
-//					if(Po_Delay > 3)
-//					{
-//						Target_Speed=111;
-//					}
-//				}
-//				else
-//				{
-//					Po_Delay=0;
-//					Target_Speed = SPEED;
-//				}
-//			}
-		
-//		Data_Send();
 		if(Zhijiao_Flag == 0)
 		{
-//			track_zhixian_PID();
-			track_zhixian_Po();
+			track_zhixian_PID();
 			if(Feipo_Flag == 1)
 			{
 				Circle_Count+=1;
@@ -271,8 +241,7 @@ int main(void)
 						break;
 				}
 			}
-//			track_zhixian_PID();
-			track_zhixian_Po();
+			track_zhixian_PID();
 		}
 		
 		XianFu();
@@ -280,9 +249,7 @@ int main(void)
 			
 		
 
-		
-		
-//		HAL_Delay(5);
+
 		
 		/*-----------------------Õ”¬›“«≤‚ ‘---------------------*/
 //		HAL_Delay(1000);
@@ -513,7 +480,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 				moto3 = Incremental_PI_C(Encoder3,Target_R);
 				moto4 = Incremental_PI_D(Encoder4,Target_R);
 				Set_Pwm(moto1, moto2, moto3, moto4);
-//				Set_Pwm(300,300,300,300);
 				Led_Flash(100);
 			}
 			else

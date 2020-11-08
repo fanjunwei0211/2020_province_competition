@@ -137,7 +137,6 @@ void track_zhixian()
 
 void track_zhixian_Po()
 {
-//	static int Last_Sensor[8];	
 	float Velocity_KP=10,Velocity_KI=0,Velocity_KD=0;	
 	static float Bias,Last_bias,Pre_Bias;
 	static int Speed;
@@ -312,11 +311,6 @@ void track_zhixian_Po()
 		}
 	}
 		
-//	for(int i=0; i<8; i++)
-//	{
-//		Last_Sensor[i] = Sensor[i];
-//	}
-//	Bias=Target-Encoder;                //计算偏差
 	Speed+=Velocity_KP*(Bias-Last_bias)+Velocity_KI*Bias+Velocity_KD*Pre_Bias;   //增量式PI控制器
 	Pre_Bias=Last_bias;
 	Last_bias=Bias;	  	
@@ -437,7 +431,6 @@ int Zhijiao_Detect()
 		if(Sensor[i] == 0)
 			Cnt++;
 	}
-//	if(Cnt>=3 && (Sensor[0] == 0 || Sensor[1]==0 ))
 	if(Cnt>=3 && Sensor[0] == 0 )
 		return 1;
 	
